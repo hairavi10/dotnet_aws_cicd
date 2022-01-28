@@ -1,25 +1,17 @@
 version: 0.2
-    
-phases:   
-  install:
-    runtime-versions:
-      dotnet: latest
-      
+
+phases:
   pre_build:
     commands:
-      #- echo Restore started on `date`
-      - dotnet restore ./CRUDDemo/packages.config
-      
+     - New-Item -ItemType Junction -Path C:\Src -Value $Env:CODEBUILD_SRC_DIR
+     - cd C:\Src  
+     - nuget.exe restore
   build:
     commands:
-      #- echo Build started on `date`
-      - dotnet build 
-      
-  post_build:
-    commands:
-      #- echo Publish started on `date`
-      # https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/dotnet-linux-platform-bundle-app.html
-      - dotnet publish -c Release -r linux-x64 --self-contained false 
+     - msbuild 
+artifacts:
+  files:
+    - '**/*'
       
 artifacts:
   files:
