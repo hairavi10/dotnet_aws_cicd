@@ -12,8 +12,10 @@ phases:
       - nuget restore
       - cd C:\
       - cd 'Program Files (x86)'
+      - cd 'Microsoft Visual Studio'
       - dir
-      - C:\%Program Files (x86)%\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
+      - $MSBUILD_PATH = 'C:\%Program Files (x86)%\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin'
+      - $MSBUILD_PATH\msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
 artifacts:
   files:
     - '**/*'
