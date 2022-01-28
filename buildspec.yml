@@ -3,10 +3,10 @@ version: 0.2
 phases:
   pre_build:
     commands:
-     - nuget
+     - nuget restore
   build:
     commands:
-     - msbuild
+     - msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
 artifacts:
   files:
     - '**/*'
