@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - nuget restore
-      - %ProgramFiles(x86)%\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
+      - C:\ProgramFiles(x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
 artifacts:
   files:
     - '**/*'
