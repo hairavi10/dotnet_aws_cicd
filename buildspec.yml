@@ -2,20 +2,12 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - Dism /online /Enable-Feature /FeatureName:NetFx4 /All
-      - Invoke-WebRequest -UseBasicParsing https://aka.ms/vs/16/release/vs_buildtools.exe -OutFile vs_BuildTools.exe
-      - Start-Process vs_BuildTools.exe -ArgumentList '--add', 'Microsoft.VisualStudio.Workload.MSBuildTools', '--add', 'Microsoft.VisualStudio.Workload.NetCoreBuildTools', '--add', 'Microsoft.VisualStudio.Workload.WebBuildTools;includeRecommended', '--quiet', '--norestart', '--nocache' -NoNewWindow -Wait
-      - Remove-Item -Force vs_buildtools.exe
+    runtime-versions:
+      sdk: 4.6    
   build:
     commands:
       - nuget restore
-      - cd C:\
-      - cd 'Program Files (x86)'
-      - cd 'Microsoft Visual Studio'
-      - dir
-      - $MSBUILD_PATH = 'C:\%Program Files (x86)%\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin'
-      - $MSBUILD_PATH\msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
+      - msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
 artifacts:
   files:
     - '**/*'
