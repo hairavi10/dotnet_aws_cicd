@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      sdk: 4.6    
+      sdk: 4.7.2    
   build:
     commands:
       - nuget restore
