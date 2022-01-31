@@ -1,15 +1,10 @@
 version: 0.2
-
-env:
-  variables:
-    PROJECT: CRUDDemo
-    DOTNET_FRAMEWORK: 4.6.1
 phases:
   build:
     commands:
       - nuget restore
-      - msbuild  /p:TargetFrameworkVersion=$env:DOTNET_FRAMEWORK /p:Configuration=Release /p:PackageAsSingleFile=false /p:OutDir=C:\codebuild\artifacts\ /t:Package
+      - msbuild 
 artifacts:
   files:
     - '**/*'
-  base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\${env:PROJECT}_Package\Archive\'
+  base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\CRUDDemo\'
