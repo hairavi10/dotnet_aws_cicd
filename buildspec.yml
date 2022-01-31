@@ -1,13 +1,8 @@
-version: 0.2
-
-phases:
-  install:
-    runtime-versions:
-      sdk: 4.7.2    
+version: 0.2    
   build:
     commands:
       - nuget restore
-      - msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release
+      - msbuild CRUDDemo.sln /t:Rebuild /p:Configuration=Release /p:outdir="c:\buildfiles\\"
 artifacts:
   files:
     - '**/*'
