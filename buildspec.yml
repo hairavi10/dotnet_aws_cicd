@@ -2,6 +2,9 @@ version: 0.2
 
 # Assumes the image is microsoft/dotnet-framework:4.7.2-sdk or similar
 phases:
+  env:
+  variables: 
+    MSBUILD_PATH: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\bin\'
   install:
     commands:
       # Below is the URL for the MSI linked from https://www.iis.net/downloads/microsoft/web-deploy
@@ -14,5 +17,5 @@ phases:
       - nuget restore
   build:
     commands:
-      - & 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\bin\msbuild' /P:Configuration=Release /T:rebuild
+      - & $env:MSBUILD_PATH\msbuild /P:Configuration=Release /T:rebuild
   
