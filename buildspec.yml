@@ -9,4 +9,8 @@ phases:
   build:
     commands:
      - msbuild 
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\CRUDDemo\'
   
