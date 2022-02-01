@@ -15,7 +15,4 @@ phases:
   build:
     commands:
       - msbuild /P:Configuration=Release /T:rebuild
-  artifacts:
-  files:
-    - '**/*'
-  base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\CRUDDemo\'
+  
