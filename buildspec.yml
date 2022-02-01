@@ -1,10 +1,17 @@
 version: 0.2
+
+env:
+  variables:
+    SOLUTION: .\CRUDDemo.sln
+    PACKAGE_DIRECTORY: .\CRUDDemo\packages
+    DOTNET_FRAMEWORK: 4.7.2
+
 phases:
   build:
     commands:
       - cd "$CODEBUILD_SRC_DIR"
-      - nuget restore
-      - msbuild 
+      - nuget restore $env:SOLUTION -PackagesDirectory $env:PACKAGE_DIRECTORY
+      - msbuild $env:SOLUTION
 artifacts:
   files:
     - '**/*'
