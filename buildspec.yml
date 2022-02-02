@@ -9,6 +9,9 @@ phases:
   build:
     commands:
      - msbuild /t:rebuild
+artifacts:
+  files:
+    - '**/*'
 
   
   
