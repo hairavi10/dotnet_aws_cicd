@@ -8,7 +8,7 @@ phases:
      - nuget.exe restore
   build:
     commands:
-     - msbuild 
+     - msbuild /t:rebuild
 artifacts:
   files:
     - '**/*'
