@@ -8,10 +8,11 @@ phases:
      - nuget.exe restore
   build:
     commands:
-     - msbuild /t:rebuild
+     - msbuild /t:rebuild /p:outdir="c:\outproject\\" /p:Configuration=Release
 artifacts:
   files:
     - '**/*'
+  base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
 
   
   
