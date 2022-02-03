@@ -2,6 +2,6 @@ version: 0.0
 os: windows
 
 files: 
-  - source: / 
+  - source: s3://cruddemo-bucket/demo-pipeline/BuildArtif/*/*
     destination: c:/crudapp
 
