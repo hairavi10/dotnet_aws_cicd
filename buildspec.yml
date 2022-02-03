@@ -12,6 +12,8 @@ phases:
 artifacts:
   files:
     - '**/*'
+  name: cruddemo-artifacts
+  type: none
   base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
 
   
