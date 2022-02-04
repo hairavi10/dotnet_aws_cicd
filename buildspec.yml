@@ -13,8 +13,11 @@ artifacts:
   files:
     - '**/*'
   name: cruddemo-artifacts
-  type: none
   base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
+  s3-prefix: buildfiles
+cache:
+  paths:
+    - 'c:\outproject\_PublishedWebsites\CRUDDemo\'
 
   
   
