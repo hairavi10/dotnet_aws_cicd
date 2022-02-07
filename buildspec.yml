@@ -22,6 +22,7 @@ artifacts:
       files:
         - appspec.yml
       base-directory: $Env:CODEBUILD_SRC_DIR
+      discard-paths: no
     
 
   
