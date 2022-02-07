@@ -18,6 +18,7 @@ artifacts:
     artifact1:      
       files:
         - appspec.yml
+      base-directory: $Env:CODEBUILD_SRC_DIR
     
 
   
