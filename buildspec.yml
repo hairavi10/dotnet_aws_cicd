@@ -12,13 +12,11 @@ phases:
 artifacts:
   files:
     - '**/*'
-    - appspec.yml
-  name: cruddemo-artifacts
-  base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
-  s3-prefix: buildfiles
+    - appspec.yml  
 cache:
   paths:
     - 'c:\outproject\_PublishedWebsites\CRUDDemo\'
+    - appspec.yml
 
   
   
