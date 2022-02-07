@@ -9,14 +9,18 @@ phases:
   build:
     commands:
      - msbuild /t:rebuild /p:outdir="c:\outproject\\" /p:Configuration=Release
+     
 artifacts:
   files:
-    - '**/*'
-    - appspec.yml  
-cache:
-  paths:
-    - 'c:\outproject\_PublishedWebsites\CRUDDemo\'
-    - appspec.yml
+    - '**.*'
+  secondary-artifacts:
+    artifact1:
+      base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
+      files:
+        - '**/*'
+    artifact2:
+      base-directory: $Env:CODEBUILD_SRC_DIR
+      files:
+        - appspec.yml
 
-  
   
