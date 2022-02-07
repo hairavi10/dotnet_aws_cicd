@@ -12,7 +12,7 @@ phases:
      
 artifacts:
   files:
-    - '**.*'
+    - '**/*'
   secondary-artifacts:
     artifact1:
       base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
