@@ -13,14 +13,11 @@ phases:
 artifacts:
   files:
     - '**/*'
+  base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
   secondary-artifacts:
-    artifact1:
-      base-directory: 'c:\outproject\_PublishedWebsites\CRUDDemo\'
-      files:
-        - '**/*'
-    artifact2:
-      base-directory: $Env:CODEBUILD_SRC_DIR
+    artifact1:      
       files:
         - appspec.yml
+    
 
   
