@@ -3,5 +3,5 @@ os: windows
 
 files: 
   - source: /
-    destination: $env:deploy_path
+    destination: C:\crudapp
 
