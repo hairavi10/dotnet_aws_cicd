@@ -4,4 +4,8 @@ os: windows
 files: 
   - source: /
     destination: C:\crudapp
+hooks:
+  AfterInstall:
+    - location: C:\crudapp\deploy_scripts.ps1
+      runas: administrator
 
