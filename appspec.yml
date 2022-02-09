@@ -6,6 +6,6 @@ files:
     destination: C:\crudapp
 hooks:
   AfterInstall:
-    - location: C:\crudapp\deploy_script.ps1
+    - location: deploy_script.ps1
       runas: administrator
 
