@@ -21,6 +21,7 @@ artifacts:
     artifact2:      
       files:
         - appspec.yml
+        - deploy_script.ps1
       base-directory: $Env:CODEBUILD_SRC_DIR
       discard-paths: no
     
