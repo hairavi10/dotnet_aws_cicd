@@ -3,7 +3,7 @@ os: windows
 
 files: 
   - source: /
-    destination: $env:deploy_path
+    destination: 'C:\crudapp'
 hooks:
   AfterInstall:
     - location: /deploy_script.ps1
